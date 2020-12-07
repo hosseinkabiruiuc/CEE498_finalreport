@@ -4,8 +4,6 @@
 
 [![HTML Manuscript](https://img.shields.io/badge/manuscript-HTML-blue.svg)](https://github.com/hosseinkabiruiuc/CEE498_finalreport/blob/Sonali1610-patch-1/content/01.Introduction.md)
 [![PDF Manuscript](https://img.shields.io/badge/manuscript-PDF-blue.svg)](https://qinyuz2.github.io/project3/manuscript.pdf)
-[![GitHub Actions Status](https://github.com/manubot/rootstock/workflows/Manubot/badge.svg)](https://github.com/manubot/rootstock/actions)
-[![Travis Build Status](https://travis-ci.com/manubot/rootstock.svg?branch=master)](https://travis-ci.com/manubot/rootstock)
 <!-- usage note: delete CI badges above for services not used by your manuscript -->
 
 ## Manuscript description
