@@ -59,7 +59,7 @@ As a result, Fig 5 shows a converted version of Fig 1 transformed from Viridis t
 
     Figure 5: transformation of input images from Viridis to Greyscale  
     
-### 2.2 Model Caliberation
+## 2.2 Model Caliberation
     
 To quntify porosity and other characterestics of images, including chemistry and angularity of pores, it is a required task to caliberate the model. The input grayscale images are all having 256*196 pixels with grayscale thresholds ranging from 0 to 255; dark pixels represent pores, while pixels with higher thershold values represent cement hydrated or anhydrous products. To quantify pore volume fraction, different thresholds correspond to pores are chosen to determine the impact of threshold limit on the averge porosity (see Fig 6). Fig 6 illuminates the maximum thresholds for both batches (i.e. 14 and 9 for batches 1 and 2, respectively), which avoids overestimation of porosity in both batches. Almost 400 million pixels were analyzed to generate this figure.
 
@@ -85,7 +85,7 @@ Therefore, luminance of images should be assigned carefully to realistically est
 
 Considering Fig 9, the threshold limit = 0 is finally chosen to accurately estimate the porosity of images. 
 
-### 2.3 Chemical Analysis
+## 2.3 Chemical Analysis
 
 As previously mentioned, greyscale SEM images are required to be considered for chemical analysis. The following thresholds intervals are defined for each image to characterize different phases:
 
@@ -101,7 +101,7 @@ To determine the robustness of image-based chemical analysis, a random image fro
 
     Figure 10: chemical analysis of greyscale SEM images
     
-### 2.4 Angularity of Capillary Pores
+## 2.4 Angularity of Capillary Pores
 
 In the next step, the shape of capillary pores is characterized using a terminology called angularity. For this purpose, a dimensionless formula is defined to calculate angularity based on the total perimeter and area of capillary pores of each figure:
 
@@ -162,7 +162,7 @@ Regarding the model, it was not different from what was given in the class. Mani
 ## 3.1 Exploratory Data Analysis
 
 As mentioned in the previous section, EDA is an effective approach to analyze the present dataset for identification, quantification, and characterization of pore system in cement-based matrix.
- ### Identifying Grayscale Value  Distribution 
+ ## 3.2 Identifying Grayscale Value  Distribution 
 The images from baches 1 and 2 were analyzed to recognize if there is any data could be extracted. 
 
 
@@ -180,7 +180,7 @@ Also, fig 19 shows how the distribution of greyscale values within the batch 2.
 
 Interestingly, the distributions of grayscale values for both batchs 1 and 2 are alike the grayscale value distribution distribution in fig 4. This confirms that the data acquired is reasonable and is valied to be analyzed.
 
- ### 3.2 Estimating Porosity Distribution 
+ ### 3.3 Estimating Porosity Distribution 
 
 Followed by doing model calibration, it is now required to estimate distribution of porosities in each batch. For this purpose, histogram of porosities at threshold = 0 is sketched in Fig 20, with different bandwidth (bins) values. Considering this figure, histograms having smaller bandwidth value, i.e. bins = 10, suggest lognormality of porosities in each batch. 
 
@@ -200,7 +200,7 @@ By proving the lognormality of porosities in both batch 1 and 2, it is of intere
 
     Figure 22: Matching lognormal distribution of porosities for batch1 and 2
 
-## 3.3 Feature Engineering
+## 3.4 Feature Engineering
 
 Using EDA, different features for characterizing porosity are extracted and shown in Fig 23. However, is required to determine whether these features are capable of estimating porosity accurately.
 
@@ -214,7 +214,7 @@ Considering Fig 24, only Calcium Silicate Hydrate (C-S-H), Portlandite (C-H), an
 
     Figure 24: SNS heatmap of correlations between features extracted using image analysis
 
-### 3.4 Application of ANN for estimating Porosities based on Cement Chemistry: C-S-H & C-H (Model I)
+## 3.5 Application of ANN for estimating Porosities based on Cement Chemistry: C-S-H & C-H (Model I)
 
 In this step, extracted features represents chemical properties of cement and are highly correlated with pore volume fraction, i.e C-S-H and C-H. These features are selected to be possibly predictive of porosity. Considering Fig 25, it could be realized that the correlations between porosity and C-S-H or C-H could be both 
 linear. In addition, increasing porosity would result in a reduction of both C-S-H and C-H values. 
@@ -249,7 +249,7 @@ ANN also facilitates matching estimated versus true porosities of training and t
  
 As a result, the predicted porosity of Model I ANN is based on chemistry of cement hydrates. It was realized that increasing the level of C-S-H or C-H, which are both the main components of cement hydration products, could be an indication of sufficient cement curing, which is also known as matrix densification. The matrix densification minimizes the size of capillary pores, which explains why in Fig 25, porosity is anticorrelated with C-S-H or C-H. 
 
-### 3.5 Application of ANN for estimating porosities based a combination of physical and chemical properties: C-S-H & Angularity (Model II)
+## 3.6 Application of ANN for estimating porosities based a combination of physical and chemical properties: C-S-H & Angularity (Model II)
 
 It is also of interest to determine whether the extracted features, that explains chemical (C-S-H) and physical properties (Angularity of pores) of cement matrix, are highly correlated with pore volume fraction. For this purpose, C-S-H together with angularity are chosen to be possibly predictive of porosity. Figure 30 represents existence of a strong nonlinear correlation between porosities and C-S-H or angularity. In addition, it was found that increasing porosity would enhance angularity of capillary pores. 
 
@@ -271,7 +271,7 @@ ANN also facilitates statistical matching estimated versus true porosities of tr
 
 Model II is also capable of relating physical as well as chemical properties of cement to its porosity, but with lower accuracy compared with Model I. The reduction in results accuracy could be attributed to the formula introduced in this paper for calculation of angularity. Nonetheless, to the authors knowledge, for the first time in the literature, angularity of pores was found to be correlated with porosity. This phenomenon shall be further explored in the future research.   
 
-### 3.6 Application of CNN for classifying porosity using SEM images (Model III)
+## 3.7 Application of CNN for classifying porosity using SEM images (Model III)
 
 Images from both batches 1 and 2 were merged into a single batch to ease working on all images. Fig 33 shows example of the categorized images. In fact, images are classified  into four different categories 0% to 10% porotity is class one, 10% to 20% is class two, 20% to 30% is class three 30% to 100% is class four
 
@@ -291,7 +291,7 @@ CNN model was build using the 200 imges from the training dataset and applied to
 
 It could be seen that both the accuracy and loss values for training and testing datasets are approching to each other. This confirms the validity of the model. However, the accuracy values are not very high, this is expected due to having a very limited number of images.
 
-## 4. Conclusions
+# 4. Conclusions
 
 Based on the present machine learning analysis, the following conclusions could be drawn: 
 
@@ -304,10 +304,10 @@ Based on the present machine learning analysis, the following conclusions could 
 The built models in this project are only the base for further works in the future. These models will be developed further to solve real problems in the infrastructure field. Other information in conjunction with porosity labels will be collected such as freezing and thawing resistance, scaling, thermal cracking and other durability issues. Then, based on these information, a model will be able to predict the remaining service life and the physicochemical properties based on the pore structure characteristics (porosity, tortuosity, connectivity, and pore size distribution), and the chemical compositions within the cement matrix as well. However, it is willing that model will be able to suggest early solutions to rehabilitate infrastructure and prevent further deterioration, which in turn saves money.
 
 
-## 5. Acknowledgements
+# 5. Acknowledgements
 The authors would like to acknowledge partial support from University of Illinois Material Research Laboratory (MRL).
 
-## References 
+# References 
 
 [1] Nedunuri, S. S. S. A., Sertse, S. G., & Muhammad, S. (2020). Microstructural study of Portland cement partially replaced with fly ash, ground granulated blast furnace slag and silica fume as determined by pozzolanic activity. Construction and Building Materials, 238, 117561.
 [https://doi.org/10.1016/j.conbuildmat.2019.117561](https://doi.org/10.1016/j.conbuildmat.2019.117561)
