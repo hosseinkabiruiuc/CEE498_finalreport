@@ -3,7 +3,7 @@
 <!-- usage note: edit the H1 title above to personalize the manuscript -->
 
 [![HTML Manuscript](https://img.shields.io/badge/manuscript-HTML-blue.svg)](https://github.com/hosseinkabiruiuc/CEE498_finalreport/blob/Sonali1610-patch-1/content/01.Manuscript.md)
-[![PDF Manuscript](https://img.shields.io/badge/manuscript-PDF-blue.svg)](https://github.com/hosseinkabiruiuc/CEE498_finalreport/blob/Sonali1610-patch-1/content/01.Manuscript.html)
+[![PDF Manuscript](https://img.shields.io/badge/manuscript-PDF-blue.svg)](https://github.com/hosseinkabiruiuc/CEE498_finalreport/blob/Sonali1610-patch-1/content/01.Manuscript.md)
 <!-- usage note: delete CI badges above for services not used by your manuscript -->
 
 ## Manuscript description
